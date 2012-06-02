@@ -8,7 +8,60 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container" style="height:60px;">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="#">Pop Up Burlington</a>
+      <div class="nav-collapse">
+        <ul class="nav pull-right">
+          <li><a href="#">I have an idea</a></li>
+          <li><a href="#">I have a space</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- Main hero unit for a primary marketing message or call to action -->
+<div class="hero-unit">
+<div class="row">
+  <div class="span5">
+     <iframe width="420" height="315" src="http://www.youtube.com/embed/tzeG7ZTcWg0" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <div class="span5">
+    <h1>Featured matches</h1>
+    <p>between this and thats</p>
+  </div>
+</div>
+</div>
+
+  <!-- Example row of columns -->
+  <%= yield %>
+
+  <hr>
+
+  <footer>
+    <p>
+      contact : Amy Kirschner
+
+      <div class="pull-right">
+      about FAQ Terms Privacy
+    </div>
+    </p>
+  </footer>
+
+</div> <!-- /container -->
 
 </body>
 </html>
+
+
+

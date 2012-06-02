@@ -1,1 +1,37 @@
-tyjsdgf
+<div class="row">
+  <div class="span3">
+    <h2>Ideas</h2>
+    <dl>
+      <% @ideas.each do |idea| %>
+        <dt><%= idea.name %></dt>
+        <dd style="float:left;width:40px;"><img src="http://placehold.it/50x50" alt=""></dd>
+        <dd style="padding:5px;"><%= idea.description %></dd>
+      <% end %>
+    </dl>
+    <p><a class="btn" href="/ideas/new" data-toggle="modal" data-target="#myModal" data-remote="true">I have an idea</a></p>
+ 
+  </div>
+  
+  <div class="span6">
+    <h2>It's a match</h2>
+    <dl>
+      <dd style="float:left;"><img src="http://placehold.it/100x100" alt=""></dd>
+      <dd style="padding:5px;">Event Name</dd>
+      <dd style="padding:5px;">Idea Name &amp; Space Name</dd>
+      <dd>November 21st, 2011</dd>
+    </dl>
+  </div>
+
+  <div class="span3">
+    <h2>Spaces</h2>
+    <dl>
+      <% @spaces.each do |space| %>
+        <dt><%= space.name %></dt>
+        <dd style="float:left;width:40px;"><img src="http://placehold.it/50x50" alt=""></dd>
+        <dd style="padding:5px;"><%= space.description %></dd>
+      <% end %>
+    </dl>
+    <p><%= link_to "I have a space", new_space_path, :class => "btn btn-primary" %></p>
+  </div>
+</div>
+

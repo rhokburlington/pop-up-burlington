@@ -4,6 +4,9 @@ class MatchesController < ApplicationController
   def index
     @matches = Match.all
 
+    @ideas = Idea.all
+    @spaces = Space.all
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @matches }

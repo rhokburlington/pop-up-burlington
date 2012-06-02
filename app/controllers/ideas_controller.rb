@@ -27,9 +27,10 @@ class IdeasController < ApplicationController
     @idea = Idea.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { render :layout => 'modal', :content_type => "text/html" }
       format.json { render json: @idea }
     end
+
   end
 
   # GET /ideas/1/edit
