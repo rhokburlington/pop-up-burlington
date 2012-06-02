@@ -1,6 +1,6 @@
-class SpacesController < ApplicationController
-  # GET /spaces
-  # GET /spaces.json
+class Admin::SpacesController < ApplicationController
+  # GET /admin/spaces
+  # GET /admin/spaces.json
   def index
     @spaces = Space.all
 
@@ -10,8 +10,8 @@ class SpacesController < ApplicationController
     end
   end
 
-  # GET /spaces/1
-  # GET /spaces/1.json
+  # GET /admin/spaces/1
+  # GET /admin/spaces/1.json
   def show
     @space = Space.find(params[:id])
 
@@ -21,8 +21,8 @@ class SpacesController < ApplicationController
     end
   end
 
-  # GET /spaces/new
-  # GET /spaces/new.json
+  # GET /admin/spaces/new
+  # GET /admin/spaces/new.json
   def new
     @space = Space.new
 
@@ -32,19 +32,19 @@ class SpacesController < ApplicationController
     end
   end
 
-  # GET /spaces/1/edit
+  # GET /admin/spaces/1/edit
   def edit
     @space = Space.find(params[:id])
   end
 
-  # POST /spaces
-  # POST /spaces.json
+  # POST /admin/spaces
+  # POST /admin/spaces.json
   def create
     @space = Space.new(params[:space])
 
     respond_to do |format|
       if @space.save
-        format.html { redirect_to root_url, notice: 'Space was successfully created.' }
+        format.html { redirect_to @space, notice: 'Space was successfully created.' }
         format.json { render json: @space, status: :created, location: @space }
       else
         format.html { render action: "new" }
@@ -53,8 +53,8 @@ class SpacesController < ApplicationController
     end
   end
 
-  # PUT /spaces/1
-  # PUT /spaces/1.json
+  # PUT /admin/spaces/1
+  # PUT /admin/spaces/1.json
   def update
     @space = Space.find(params[:id])
 
@@ -69,14 +69,14 @@ class SpacesController < ApplicationController
     end
   end
 
-  # DELETE /spaces/1
-  # DELETE /spaces/1.json
+  # DELETE /admin/spaces/1
+  # DELETE /admin/spaces/1.json
   def destroy
     @space = Space.find(params[:id])
     @space.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_index_url }
+      format.html { redirect_to admin_spaces_url }
       format.json { head :no_content }
     end
   end

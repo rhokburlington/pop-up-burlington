@@ -16,11 +16,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="#">Pop Up Burlington</a>
+      <%= link_to "Pop Up Burlington", root_url, :class => "brand" %>
       <div class="nav-collapse">
         <ul class="nav pull-right">
-          <li><a href="#">I have an idea</a></li>
-          <li><a href="#">I have a space</a></li>
+          <li></li>
+          <li></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -29,19 +29,20 @@
 
 <div class="container">
 
-<!-- Main hero unit for a primary marketing message or call to action -->
-<div class="hero-unit">
-<div class="row">
-  <div class="span5">
-     <iframe width="420" height="315" src="http://www.youtube.com/embed/tzeG7ZTcWg0" frameborder="0" allowfullscreen></iframe>
-  </div>
+  <% unless controller.controller_path =~ /admin/ %>
+  <div class="hero-unit">
+    <div class="row">
+      <div class="span5">
+         <iframe width="420" height="315" src="http://www.youtube.com/embed/tzeG7ZTcWg0" frameborder="0" allowfullscreen></iframe>
+      </div>
 
-  <div class="span5">
-    <h1>Featured matches</h1>
-    <p>between this and thats</p>
+      <div class="span5">
+        <h1>Featured matches</h1>
+        <p>between this and thats</p>
+      </div>
+    </div>
   </div>
-</div>
-</div>
+  <% end %>
 
   <!-- Example row of columns -->
   <%= yield %>
@@ -54,6 +55,7 @@
 
       <div class="pull-right">
       about FAQ Terms Privacy
+      <%= link_to "admin", admin_matches_path %>
     </div>
     </p>
   </footer>

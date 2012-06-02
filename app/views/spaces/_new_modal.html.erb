@@ -1,0 +1,35 @@
+<p><a class="btn" href="#spaceModal" data-toggle="modal">I have a space</a></p>
+
+<div class="modal fade" id="spaceModal"> 
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h3>Yeah!  Tell us about your awesome space!</h3>
+  </div>
+  <%= form_for(@space) do |f| %>
+  <div class="modal-body">
+    <% if @space.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@space.errors.count, "error") %> prohibited this idea from being saved:</h2>
+
+        <ul>
+        <% @space.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <%= f.submit "Submit for approval", :class => "btn btn-primary" %>
+    <a href="#" class="btn" data-dismiss="modal">Cancel</a>
+  </div>
+  <% end %>
+</div>

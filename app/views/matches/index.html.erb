@@ -8,7 +8,7 @@
         <dd style="padding:5px;"><%= idea.description %></dd>
       <% end %>
     </dl>
-    <p><a class="btn" href="/ideas/new" data-toggle="modal" data-target="#myModal" data-remote="true">I have an idea</a></p>
+    <%= render 'ideas/new_modal' %>
  
   </div>
   
@@ -31,7 +31,8 @@
         <dd style="padding:5px;"><%= space.description %></dd>
       <% end %>
     </dl>
-    <p><%= link_to "I have a space", new_space_path, :class => "btn btn-primary" %></p>
+    <%= render 'spaces/new_modal' %>
   </div>
 </div>
+
 

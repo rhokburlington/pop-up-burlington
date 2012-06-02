@@ -1,12 +1,8 @@
-class MatchesController < ApplicationController
-  # GET /matches
-  # GET /matches.json
+class Admin::MatchesController < ApplicationController
+  # GET /admin/matches
+  # GET /admin/matches.json
   def index
     @matches = Match.all
-    @ideas = Idea.all
-    @spaces = Space.all
-    @idea = Idea.new
-    @space = Space.new
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,8 +10,8 @@ class MatchesController < ApplicationController
     end
   end
 
-  # GET /matches/1
-  # GET /matches/1.json
+  # GET /admin/matches/1
+  # GET /admin/matches/1.json
   def show
     @match = Match.find(params[:id])
 
@@ -25,8 +21,8 @@ class MatchesController < ApplicationController
     end
   end
 
-  # GET /matches/new
-  # GET /matches/new.json
+  # GET /admin/matches/new
+  # GET /admin/matches/new.json
   def new
     @match = Match.new
 
@@ -36,13 +32,13 @@ class MatchesController < ApplicationController
     end
   end
 
-  # GET /matches/1/edit
+  # GET /admin/matches/1/edit
   def edit
     @match = Match.find(params[:id])
   end
 
-  # POST /matches
-  # POST /matches.json
+  # POST /admin/matches
+  # POST /admin/matches.json
   def create
     @match = Match.new(params[:match])
 
@@ -57,8 +53,8 @@ class MatchesController < ApplicationController
     end
   end
 
-  # PUT /matches/1
-  # PUT /matches/1.json
+  # PUT /admin/matches/1
+  # PUT /admin/matches/1.json
   def update
     @match = Match.find(params[:id])
 
@@ -73,14 +69,14 @@ class MatchesController < ApplicationController
     end
   end
 
-  # DELETE /matches/1
-  # DELETE /matches/1.json
+  # DELETE /admin/matches/1
+  # DELETE /admin/matches/1.json
   def destroy
     @match = Match.find(params[:id])
     @match.destroy
 
     respond_to do |format|
-      format.html { redirect_to matches_url }
+      format.html { redirect_to admin_matches_url }
       format.json { head :no_content }
     end
   end

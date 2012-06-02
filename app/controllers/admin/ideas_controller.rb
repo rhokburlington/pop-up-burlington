@@ -1,17 +1,17 @@
-class IdeasController < ApplicationController
-  # GET /ideas
-  # GET /ideas.json
+class Admin::IdeasController < ApplicationController
+  # GET /admin/ideas
+  # GET /admin/ideas.json
   def index
     @ideas = Idea.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @ideas }
+      format.json { render json: @admin_ideas }
     end
   end
 
-  # GET /ideas/1
-  # GET /ideas/1.json
+  # GET /admin/ideas/1
+  # GET /admin/ideas/1.json
   def show
     @idea = Idea.find(params[:id])
 
@@ -21,31 +21,30 @@ class IdeasController < ApplicationController
     end
   end
 
-  # GET /ideas/new
-  # GET /ideas/new.json
+  # GET /admin/ideas/new
+  # GET /admin/ideas/new.json
   def new
     @idea = Idea.new
 
     respond_to do |format|
-      format.html 
+      format.html # new.html.erb
       format.json { render json: @idea }
     end
-
   end
 
-  # GET /ideas/1/edit
+  # GET /admin/ideas/1/edit
   def edit
     @idea = Idea.find(params[:id])
   end
 
-  # POST /ideas
-  # POST /ideas.json
+  # POST /admin/ideas
+  # POST /admin/ideas.json
   def create
     @idea = Idea.new(params[:idea])
 
     respond_to do |format|
       if @idea.save
-        format.html { redirect_to root_url, notice: 'Idea was successfully created.' }
+        format.html { redirect_to @idea, notice: 'Idea was successfully created.' }
         format.json { render json: @idea, status: :created, location: @idea }
       else
         format.html { render action: "new" }
@@ -54,8 +53,8 @@ class IdeasController < ApplicationController
     end
   end
 
-  # PUT /ideas/1
-  # PUT /ideas/1.json
+  # PUT /admin/ideas/1
+  # PUT /admin/ideas/1.json
   def update
     @idea = Idea.find(params[:id])
 
@@ -70,14 +69,14 @@ class IdeasController < ApplicationController
     end
   end
 
-  # DELETE /ideas/1
-  # DELETE /ideas/1.json
+  # DELETE /admin/ideas/1
+  # DELETE /admin/ideas/1.json
   def destroy
     @idea = Idea.find(params[:id])
     @idea.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_index_url }
+      format.html { redirect_to admin_ideas_url }
       format.json { head :no_content }
     end
   end
