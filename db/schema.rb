@@ -11,27 +11,66 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120602171024) do
+ActiveRecord::Schema.define(:version => 20120602192547) do
 
-  create_table "ideas", :force => true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  create_table "matches", :force => true do |t|
-    t.integer  "idea_id"
-    t.integer  "space_id"
+  create_table "admin_ideas", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  create_table "spaces", :force => true do |t|
+  create_table "admin_matches", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "admin_spaces", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "ideas", :force => true do |t|
+    t.boolean  "published"
+    t.boolean  "archived"
     t.string   "name"
     t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "contact"
+    t.integer  "capacity"
+    t.text     "success_criteria"
+    t.text     "goodwill"
+    t.text     "logistics"
+    t.text     "features"
+    t.text     "formality"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "matches", :force => true do |t|
+    t.datetime "start_datetime"
+    t.datetime "end_datetime"
+    t.string   "url"
+    t.boolean  "published"
+    t.boolean  "archived"
+    t.text     "comments"
+    t.integer  "idea_id"
+    t.integer  "space_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "spaces", :force => true do |t|
+    t.boolean  "published"
+    t.boolean  "archived"
+    t.string   "name"
+    t.string   "description"
+    t.string   "contact"
+    t.integer  "capacity"
+    t.text     "benefit"
+    t.text     "goodwill"
+    t.text     "long_description"
+    t.text     "satisfaction"
+    t.text     "formality"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
 end
