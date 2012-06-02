@@ -1,24 +1,24 @@
 <%= render "admin/shared/navigation" %>
 
+<h3>Matches</h3>
 
-<h1>Manage Matches</h1>
 
-<table class="table table-stripped">
+<%= link_to 'New Match', new_admin_match_path, :class => "btn btn-success pull-right", :style=>"margin:10px" %>
+
+<table class="table table-striped">
   <tr>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Idea</th>
+    <th>Space</th>
+    <th colspan="3" style="width:20%"></th>
   </tr>
 
 <% @matches.each do |match| %>
   <tr>
-    <td><%= link_to 'Show', admin_match %></td>
-    <td><%= link_to 'Edit', edit_admin_match_path(match) %></td>
-    <td><%= link_to 'Destroy', admin_match, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= match.idea.name %></td>
+    <td><%= match.space.name %></td>
+    <td><%= link_to 'Show', admin_match_path(match), :class => "btn" %></td>
+    <td><%= link_to 'Edit', edit_admin_match_path(match), :class => "btn btn-primary" %></td>
+    <td><%= link_to 'Destroy', admin_match_path(match), confirm: 'Are you sure?', method: :delete, :class => "btn btn-danger" %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Match', new_admin_match_path %>

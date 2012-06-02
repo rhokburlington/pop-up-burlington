@@ -1,5 +1,8 @@
 <%= render "admin/shared/navigation" %>
 
+<h3>Ideas</h3>
+
+
 <%= link_to 'New Idea', new_admin_idea_path, :class => "btn btn-success pull-right", :style=>"margin:10px" %>
 
 <table class="table table-striped">
@@ -13,9 +16,9 @@
   <tr>
     <td><%= idea.name %></td>
     <td><%= idea.description %></td>
-    <td><%= link_to 'Show', idea, :class => "btn" %></td>
+    <td><%= link_to 'Show', admin_idea_path(idea), :class => "btn" %></td>
     <td><%= link_to 'Edit', edit_admin_idea_path(idea), :class => "btn btn-primary" %></td>
-    <td><%= link_to 'Destroy', idea, confirm: 'Are you sure?', method: :delete, :class => "btn btn-danger" %></td>
+    <td><%= link_to 'Destroy', admin_idea_path(idea), confirm: 'Are you sure?', method: :delete, :class => "btn btn-danger" %></td>
   </tr>
 <% end %>
 </table>

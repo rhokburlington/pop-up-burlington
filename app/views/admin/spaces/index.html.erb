@@ -1,24 +1,23 @@
 <%= render "admin/shared/navigation" %>
 
+<h3>Spaces</h3>
 
-<h1>Listing admin_spaces</h1>
+<%= link_to 'New Space', new_admin_space_path, :class => "btn btn-success pull-right", :style=>"margin:10px" %>
 
-<table>
+<table class="table table-striped">
   <tr>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Name</th>
+    <th>Description</th>
+    <th colspan="3" style="width:20%"></th>
   </tr>
 
 <% @spaces.each do |space| %>
   <tr>
-    <td><%= link_to 'Show', space %></td>
-    <td><%= link_to 'Edit', edit_admin_space_path(space) %></td>
-    <td><%= link_to 'Destroy', space, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= space.name %></td>
+    <td><%= space.description %></td>
+    <td><%= link_to 'Show', admin_space_path(space), :class => "btn" %></td>
+    <td><%= link_to 'Edit', edit_admin_space_path(space), :class => "btn btn-primary" %></td>
+    <td><%= link_to 'Destroy', admin_space_path(space), confirm: 'Are you sure?', method: :delete, :class => "btn btn-danger" %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Space', new_admin_space_path %>

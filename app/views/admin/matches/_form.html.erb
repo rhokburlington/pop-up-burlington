@@ -1,4 +1,4 @@
-<%= form_for(@match) do |f| %>
+<%= form_for([:admin, @match]) do |f| %>
   <% if @match.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@match.errors.count, "error") %> prohibited this match from being saved:</h2>
@@ -12,6 +12,12 @@
   <% end %>
 
   <div class="actions">
+    <%= f.label "Space" %>
+    <%= f.select :space_id, Space.all.collect {|s| [ s.name, s.id ] } %>
+
+    <%= f.label "Idea" %>
+    <%= f.select :idea_id, Idea.all.collect {|i| [ i.name, i.id ] } %>
+
     <%= f.submit %>
   </div>
 <% end %>

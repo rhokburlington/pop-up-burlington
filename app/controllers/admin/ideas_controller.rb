@@ -44,7 +44,7 @@ class Admin::IdeasController < ApplicationController
 
     respond_to do |format|
       if @idea.save
-        format.html { redirect_to @idea, notice: 'Idea was successfully created.' }
+        format.html { redirect_to admin_ideas_url, notice: 'Idea was successfully created.' }
         format.json { render json: @idea, status: :created, location: @idea }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class Admin::IdeasController < ApplicationController
 
     respond_to do |format|
       if @idea.update_attributes(params[:idea])
-        format.html { redirect_to @idea, notice: 'Idea was successfully updated.' }
+        format.html { redirect_to admin_ideas_url, notice: 'Idea was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

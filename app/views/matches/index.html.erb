@@ -15,10 +15,12 @@
   <div class="span6">
     <h2>It's a match</h2>
     <dl>
+      <% @matches.each do |match| %>
       <dd style="float:left;"><img src="http://placehold.it/100x100" alt=""></dd>
-      <dd style="padding:5px;">Event Name</dd>
-      <dd style="padding:5px;">Idea Name &amp; Space Name</dd>
+      <dd style="padding:5px;">EVENT NAME</dd>
+      <dd style="padding:5px;"><%= match.idea.name %> &amp; <%= match.space.name %></dd>
       <dd>November 21st, 2011</dd>
+      <% end %>
     </dl>
   </div>
 

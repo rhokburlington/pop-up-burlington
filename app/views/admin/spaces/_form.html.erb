@@ -1,4 +1,4 @@
-<%= form_for(@space) do |f| %>
+<%= form_for([:admin, @space]) do |f| %>
   <% if @space.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@space.errors.count, "error") %> prohibited this space from being saved:</h2>
@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="actions">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :description %>
+    <%= f.text_field :description %>
     <%= f.submit %>
   </div>
 <% end %>
