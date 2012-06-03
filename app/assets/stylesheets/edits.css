@@ -297,3 +297,8 @@ footer .logos img {
 	height:55px; 
 	margin:20px 15px 0 0;
 }
+
+.actions textarea {
+	width:90%;
+	height:80px;
+}
