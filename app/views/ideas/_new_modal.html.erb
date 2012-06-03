@@ -1,4 +1,4 @@
-<p><a id="goto_step1" class="btn" href="#ideaModal" data-toggle="modal">I have an idea</a></p>
+<p><a id="goto_step1a" class="btn" href="#ideaModal" data-toggle="modal">I have an idea</a></p>
 
 <div class="modal fade" id="ideaModal"> 
   <div class="modal-header">
@@ -20,7 +20,7 @@
     <% end %>
 
     <div class="actions">
-      <div id="step1">
+      <div id="step1a">
         <h4>Step 1 of 4</h4>
         <%= f.label "success_criteria" %>
         <%= f.text_area :success_criteria %>
@@ -29,7 +29,7 @@
         <%= f.text_area :goodwill %>
       </div>
 
-      <div id="step2">
+      <div id="step2a">
         <h4>Step 2 of 4</h4>
         <%= f.label :logistics %>
         <%= f.text_area :logistics %>
@@ -38,7 +38,7 @@
         <%= f.text_area :features %>
       </div>
 
-      <div id="step3">
+      <div id="step3a">
         <h4>Step 3 of 4</h4>
 
         <%= f.label :formality %>
@@ -48,7 +48,7 @@
         <%= f.text_field :capacity, :class => "span1" %> People
       </div>
 
-      <div id="step4">
+      <div id="step4a">
         <h4>Step 4 of 4</h4>
         
         <%= f.label "Title of Idea" %>
@@ -63,16 +63,16 @@
     </div>
   </div>
   <div class="modal-footer">
-    <a id="back_step1" href="#" class="btn">Back</a>
-    <a id="back_step2" href="#" class="btn">Back</a>
-    <a id="back_step3" href="#" class="btn">Back</a>
+    <a id="back_step1a" href="#" class="btn">Back</a>
+    <a id="back_step2a" href="#" class="btn">Back</a>
+    <a id="back_step3a" href="#" class="btn">Back</a>
 
 
-    <a id="goto_step2" href="#" class="btn btn-primary">Next</a>
-    <a id="goto_step3" href="#" class="btn btn-primary">Next</a>
-    <a id="goto_step4" href="#" class="btn btn-primary">Next</a>
+    <a id="goto_step2a" href="#" class="btn btn-primary">Next</a>
+    <a id="goto_step3a" href="#" class="btn btn-primary">Next</a>
+    <a id="goto_step4a" href="#" class="btn btn-primary">Next</a>
 
-    <%= f.submit "Submit for approval", :class => "btn btn-primary", :id => "complete_steps" %>
+    <%= f.submit "Submit for approval", :class => "btn btn-primary", :id => "complete_stepsa" %>
     <br/><br/>
     <a href="#" class="btn" data-dismiss="modal">Cancel</a>
   </div>

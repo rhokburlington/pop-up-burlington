@@ -2,7 +2,7 @@
 
 <h3>Matches</h3>
 
-<p>Unpublished Ideas: <b><%= Idea.where(:published => false).count %></b></p>
+<p>Unpublished Ideas: <b style="color:red;font-size:20px;"><%= Idea.where(:published => false).count %></b></p>
 
 <%= link_to 'New Match', new_admin_match_path, :class => "btn btn-success pull-right", :style=>"margin:10px" %>
 
