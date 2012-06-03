@@ -16,6 +16,12 @@ class CreateSpaces < ActiveRecord::Migration
       t.text :satisfaction
       t.text :formality
 
+      t.string :address
+      t.string :city, :default => "Burlington"
+      t.string :state, :default => "VT"
+      t.string :zip, :default => "05401"
+
+
       t.timestamps
     end
   end
