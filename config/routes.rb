@@ -6,6 +6,13 @@ PopUpBurlington::Application.routes.draw do
   resources :matches
   resources :spaces
   resources :ideas
+
+  match "about", :to => "static#about"
+  match "faq", :to => "static#faq"
+  match "privacy", :to => "static#privacy"
+  match "terms", :to => "static#terms"
+
+
  
  
   root :to => 'matches#index'
