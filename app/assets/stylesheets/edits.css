@@ -93,10 +93,12 @@ h2 {
 	color: #bbbbbb;
 	text-shadow: 0 0 5px rgba(255,255,255, .3);
 }
-.navbar .brand { margin-top: 0px; }
+.navbar .brand { margin-top: 0px; color:#fff;}
 .navbar .nav > li > a { 
 	margin-top: 10px; 
 }
+
+
 
 /* ---------- HEADER: hero unit ----------- */
 .hero-unit { 
