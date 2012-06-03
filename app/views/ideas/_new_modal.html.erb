@@ -22,30 +22,30 @@
     <div class="actions">
       <div id="step1a">
         <h4>Step 1 of 4</h4>
-        <%= f.label "success_criteria" %>
+        <%= f.label "What would it look like if your idea is successful?" %>
         <%= f.text_area :success_criteria %>
 
-        <%= f.label "goodwill" %>
+        <%= f.label "Describe how you will cultivate a good relationship with space?" %>
         <%= f.text_area :goodwill %>
       </div>
 
       <div id="step2a">
         <h4>Step 2 of 4</h4>
-        <%= f.label :logistics %>
+        <%= f.label "What are the logistics of your event (ie: time, date, size, etc)?" %>
         <%= f.text_area :logistics %>
 
-        <%= f.label :features %>
+        <%= f.label "What features are you looking for in a space?" %>
         <%= f.text_area :features %>
       </div>
 
       <div id="step3a">
         <h4>Step 3 of 4</h4>
 
-        <%= f.label :formality %>
+        <%= f.label "How formal does the agreement need to be?" %>
         <%= f.text_area :formality %>
 
-        <%= f.label :capacity %>
-        <%= f.text_field :capacity, :class => "span1" %> People
+        <%= f.label "Please upload a photo of your idea?" %>
+        <%= f.file_field :photo %>
       </div>
 
       <div id="step4a">
@@ -59,9 +59,7 @@
 
         <%= f.label "My Contact information" %>
         <%= f.text_field :contact, :placeholder => "phone or email" %>
-
-        <%= f.label :photo %>
-        <%= f.file_field :photo %>
+ 
       </div>
     </div>
   </div>

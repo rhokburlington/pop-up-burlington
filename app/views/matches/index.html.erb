@@ -18,7 +18,7 @@
   </div>
   
   <div id='matchesCol' class="span4">
-    <h2 class="purple">It's a match</h2>
+    <h2 class="purple" style="text-align:center">It's a match!</h2>
     <% @matches.each do |match| %>
 
     <div class='match <%= match.start_datetime < Date.today ? "old" : "" %>'>
@@ -39,7 +39,7 @@
 
   <div class="span3">
     <div id="spacesCol">
-      <h2 class="red">Spaces</h2>
+      <h2 class="red" style="text-align:right">Spaces</h2>
       <dl>
         <% @spaces.each do |space| %>
           <dd class='image'><%= image_tag space.photo.url(:thumb) %></dd>

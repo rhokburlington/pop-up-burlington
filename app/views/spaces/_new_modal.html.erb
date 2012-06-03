@@ -1,4 +1,4 @@
-<p class='btnContainer'><a id="goto_step1b" class="btn blue" href="#spaceModal" data-toggle="modal">I have a space</a></p>
+<p class='btnContainer pull-right'><a id="goto_step1b" class="btn blue" href="#spaceModal" data-toggle="modal">I have a space</a></p>
 
 <div class="modal fade" id="spaceModal"> 
   <div class="modal-header">
@@ -22,31 +22,31 @@
     <div class="actions">
       <div id="step1b">
         <h4>Step 1 of 4</h4>
-        <%= f.label "benefit" %>
+        <%= f.label "How will having an event at your space be beneficial?" %>
         <%= f.text_area :benefit %>
 
-        <%= f.label "goodwill" %>
+        <%= f.label "How will you cultivate a good relationship with people using your space?" %>
         <%= f.text_area :goodwill %>
       </div>
 
       <div id="step2b">
         <h4>Step 2 of 4</h4>
-        <%= f.label :long_description %>
+
+        <%= f.label "Please describe your space" %>
         <%= f.text_area :long_description %>
 
-        <%= f.label :satisfaction %>
+        <%= f.label "What conditions need to be met for you to be happy with an event?" %>
         <%= f.text_area :satisfaction %>
       </div>
 
       <div id="step3b">
         <h4>Step 3 of 4</h4>
 
-        <%= f.label :formality %>
+        <%= f.label "How formal does an agreement need to be?" %>
         <%= f.text_area :formality %>
 
-        <%= f.label :capacity %>
-        <%= f.text_field :capacity, :class => "span1" %> People
-        
+        <%= f.label "Please upload a photo of your idea?" %>
+        <%= f.file_field :photo %>
       </div>
 
       <div id="step4b">
@@ -60,6 +60,7 @@
 
         <%= f.label "My Contact information" %>
         <%= f.text_field :contact, :placeholder => "phone or email" %>
+
 
         <%= f.label "Address" %>
         <%= f.text_field :address, :placeholder => "street" %>
@@ -79,8 +80,6 @@
 
         
 
-          <%= f.label :photo %>
-          <%= f.file_field :photo %>
       </div>
     </div>
   </div>
