@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(:version => 20120602192547) do
   end
 
   create_table "ideas", :force => true do |t|
-    t.boolean  "published",        :default => false
-    t.boolean  "archived",         :default => false
+    t.boolean  "published",          :default => false
+    t.boolean  "archived",           :default => false
     t.string   "name"
     t.string   "description"
     t.string   "contact"
@@ -40,8 +40,12 @@ ActiveRecord::Schema.define(:version => 20120602192547) do
     t.text     "logistics"
     t.text     "features"
     t.text     "formality"
-    t.datetime "created_at",                          :null => false
-    t.datetime "updated_at",                          :null => false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
   end
 
   create_table "matches", :force => true do |t|
@@ -58,8 +62,8 @@ ActiveRecord::Schema.define(:version => 20120602192547) do
   end
 
   create_table "spaces", :force => true do |t|
-    t.boolean  "published",        :default => false
-    t.boolean  "archived",         :default => false
+    t.boolean  "published",          :default => false
+    t.boolean  "archived",           :default => false
     t.string   "name"
     t.string   "description"
     t.string   "contact"
@@ -70,11 +74,15 @@ ActiveRecord::Schema.define(:version => 20120602192547) do
     t.text     "satisfaction"
     t.text     "formality"
     t.string   "address"
-    t.string   "city",             :default => "Burlington"
-    t.string   "state",            :default => "VT"
-    t.string   "zip",              :default => "05401"
-    t.datetime "created_at",                                 :null => false
-    t.datetime "updated_at",                                 :null => false
+    t.string   "city",               :default => "Burlington"
+    t.string   "state",              :default => "VT"
+    t.string   "zip",                :default => "05401"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
   end
 
 end

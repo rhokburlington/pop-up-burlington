@@ -21,6 +21,7 @@ class CreateSpaces < ActiveRecord::Migration
       t.string :state, :default => "VT"
       t.string :zip, :default => "05401"
 
+      t.has_attached_file :photo
 
       t.timestamps
     end

@@ -1,4 +1,4 @@
-<%= form_for([:admin, @space]) do |f| %>
+<%= form_for [:admin, @space], :html => { :multipart => true }  do |f| %>
   <% if @space.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@space.errors.count, "error") %> prohibited this space from being saved:</h2>
@@ -18,6 +18,8 @@
     <%= f.label :name %>
     <%= f.text_field :name %>
 
+    <%= f.label :photo %>
+    <%= f.file_field :photo %>
 
     <%= f.label :contact %>
     <%= f.text_field :contact %>

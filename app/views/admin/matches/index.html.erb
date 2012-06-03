@@ -21,7 +21,7 @@
   <tr>
     <td><%= match.created_at.to_s(:long) %></td>
     <td><%= match.published == true ? "yes" : "no" %></td>
-    <td><%= match.start_datetime.to_s(:long) %> to<br/><%= match.end_datetime.to_s(:long) %></td>
+    <td><%= match.start_datetime.to_s(:long) if match.start_datetime.present? %> to<br/><%= match.end_datetime.to_s(:long) if match.end_datetime.present? %></td>
     <td><%= match.idea.name %></td>
     <td><%= match.space.name %></td>
     <td><%= match.url %></td>

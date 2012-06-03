@@ -32,7 +32,7 @@ class IdeasController < ApplicationController
 
     respond_to do |format|
       if @idea.save
-        format.html { redirect_to root_url, notice: 'Idea was successfully created.' }
+        format.html { redirect_to root_url, notice: 'Thank you for submitting your idea. We will be in touch. Call Amy with any questions.' }
         format.json { render json: @idea, status: :created, location: @idea }
       end
     end

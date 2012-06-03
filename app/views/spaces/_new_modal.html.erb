@@ -5,7 +5,7 @@
     <button type="button" class="close" data-dismiss="modal">×</button>
     <h3>Yeah!  Tell us about your awesome space!</h3>
   </div>
-  <%= form_for(@space) do |f| %>
+  <%= form_for @space, :html => { :multipart => true }  do |f| %>
   <div class="modal-body">
     <% if @space.errors.any? %>
       <div id="error_explanation">
@@ -72,22 +72,27 @@
         <div class="form-inline">
           <%= f.label "state" %>
           <%= f.text_field :state %>
+          
+          <%= f.label "Zip" %>
+          <%= f.text_field :zip %>
         </div>
 
-        <%= f.label "Zip" %>
-        <%= f.text_field :zip %>
+        
+
+          <%= f.label :photo %>
+          <%= f.file_field :photo %>
       </div>
     </div>
   </div>
   <div class="modal-footer">
-    <a id="back_step1b" href="#" class="btn">Back</a>
-    <a id="back_step2b" href="#" class="btn">Back</a>
-    <a id="back_step3b" href="#" class="btn">Back</a>
+    
+    <span id="back_step1b" class="btn">Back</span>
+    <span id="back_step2b" class="btn">Back</span>
+    <span id="back_step3b" class="btn">Back</span>
 
-
-    <a id="goto_step2b" href="#" class="btn btn-primary">Next</a>
-    <a id="goto_step3b" href="#" class="btn btn-primary">Next</a>
-    <a id="goto_step4b" href="#" class="btn btn-primary">Next</a>
+    <span id="goto_step2b" class="btn btn-primary">Next</span>
+    <span id="goto_step3b" class="btn btn-primary">Next</span>
+    <span id="goto_step4b" class="btn btn-primary">Next</span>
 
     <%= f.submit "Submit for approval", :class => "btn btn-primary", :id => "complete_stepsb" %>
     <br/><br/>

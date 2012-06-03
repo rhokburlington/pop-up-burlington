@@ -16,6 +16,8 @@ class CreateIdeas < ActiveRecord::Migration
       t.text :features
       t.text :formality
 
+      t.has_attached_file :photo
+
       t.timestamps
     end
   end

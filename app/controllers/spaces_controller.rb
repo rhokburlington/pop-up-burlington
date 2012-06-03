@@ -32,7 +32,7 @@ class SpacesController < ApplicationController
 
     respond_to do |format|
       if @space.save
-        format.html { redirect_to root_url, notice: 'Space was successfully created.' }
+        format.html { redirect_to root_url, notice: 'Thank you for submitting your space. We will be in touch. Call Amy with any questions.' }
         format.json { render json: @space, status: :created, location: @space }
       end
     end
