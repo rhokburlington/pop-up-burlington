@@ -2,6 +2,7 @@
 	red: #4B6DDB
 	blue: #CA1616
 	purple: #9200BF
+	dark purple: #69008A
 */
 
 
@@ -55,12 +56,14 @@ table td {
 
 body { 
 	background: url('/assets/background.png');
-	padding-top: 60px;
+	padding-top:60px;
 }
 .container { 
 	width: 1070px;
 }
-
+h1, h2, h3, h4, h5, h6 { 
+	font-family: 'Vollkorn', serif; 
+}
 h1, .hero-unit h1 { 
 	font-size: 1.3em; 
 	color: #eee;
@@ -71,7 +74,7 @@ h2 {
 }
 .red { color: #4B6DDB; }
 .blue { color: #CA1616; }
-.purple { color: #9200BF; }
+.purple { color: #69008A; }
 
 
 /* ---------- TOP NAV: black bar ----------- */
@@ -92,19 +95,17 @@ h2 {
 	color: #bbbbbb;
 	text-shadow: 0 0 5px rgba(255,255,255, .3);
 }
-.navbar .brand { margin-top: 0px; color:#fff;}
+.navbar .brand { margin-top: 0px; }
 .navbar .nav > li > a { 
 	margin-top: 10px; 
 }
-
-
 
 /* ---------- HEADER: hero unit ----------- */
 .hero-unit { 
 	height: 220px; 
 	background:transparent;
 	border: 1px dashed #ccc;
-	padding-top: 60px;
+	padding-top: 20px;
 	box-shadow: 5px 5px 5px #DDDDDD;
 	background-color: white;
 	background-color: rgba(255,255,255,.2);
@@ -126,6 +127,8 @@ h2 {
 	width:40px; 
 	padding: 0 5px 0 0;
 }
+
+/* ---------- COLUMN STUFF ----------- */
 #ideasCol, 
 #matchesCol,
 #spacesCol {
@@ -137,19 +140,18 @@ h2 {
 	box-shadow: 5px 5px 5px #DDDDDD;
 	background-color: white;
 	background-color: rgba(255,255,255,.2);
+	overflow-y: auto;
+	overflow-x: hidden;
 }
-
-
-/* ---------- COLUMN STUFF ----------- */
 #ideasCol .desc, 
 #spacesCol .desc { 
 	clear: both;
 	padding:5px 0; 
 }
+/* MATCHES COLUMN */
 #matchesCol { 
-	width: 445px;
-	border: solid 2px #9200BF;
-	border-bottom-width: 0px;
+	width: 400px;
+	border: solid 2px #69008A;
 }
 #matchesCol .image { 
 	width:auto; 
@@ -157,6 +159,13 @@ h2 {
 .match {		
 	clear: left;
 	margin-bottom: 25px;
+}
+.match .eventName { 
+	font-weight: bold;
+	color: #69008A; 
+}
+.old.match .eventName { 
+	color: #666666; 
 }
 .calendar { 
 	float: left;
@@ -174,12 +183,13 @@ h2 {
 	-webkit-border-bottom-right-radius: 5px; -moz-border-radius-bottom-right:     5px;
 }
 .calendar > span { display: block; }
-.calendar > .month { 
+.calendar > .month {
 	text-align: right; 
 	padding: 2px 5px 2px 0;
 	text-shadow: 0 1px #666;
-	background: -webkit-gradient(linear, left top, left bottom, from(#79D4FF), to(#2256FD));
-	background: -moz-linear-gradient(top, #79D4FF, #2256FD);
+	color: #dddddd;
+	background: -webkit-gradient(linear, left top, left bottom, from(#A000D3), to(#69008A));
+	background: -moz-linear-gradient(top, #A000D3, #69008A);
 }                                         
 .calendar > .day { 
 	line-height: 38px;
@@ -188,12 +198,13 @@ h2 {
 	font-size: 2.3em;
 	text-shadow: 0 1px #fff;        
 }	
-.old.match .day {
-	color: #555;
-}
 .old.match .month { 
+	color: inherit;
 	background: -webkit-gradient(linear, left top, left bottom, from(#dddddd), to(#999999));
 	background: -moz-linear-gradient(top, #dddddd, #999999);
+}
+.old.match .day {
+	color: #666;
 }
 #ideas-arrow { 
 	position: absolute;
@@ -202,6 +213,9 @@ h2 {
 	opacity: .1;
 	z-index:-55;
 }
+
+/* FUNNEL ARROWS */
+
 		
 /* ---------- BUTTONS  ----------- */
 p.btnContainer{ 
@@ -209,11 +223,13 @@ p.btnContainer{
 }
 p.btnContainer .btn { 
 	height: auto;
+	width: 230px;
 	color:black;
 	text-shadow: 0 0 3px rgba(200,200,200, .8);
-	border: 1px solid #555;
+	border: 0;
 }
 .downBtn {
+	display: none;
 	position: absolute;
 	left: 0px;
 	bottom: 0px;
@@ -222,7 +238,7 @@ p.btnContainer .btn {
 	border: solid 1px #bbb;
 	border-left-width: 0;
 	border-right-width: 0;
-	background: url('/assets/icon_arrow_gray_down.png') 50% 50% no-repeat #ddd;
+	background: url('assets/icon_arrow_gray_down.png') 50% 50% no-repeat #ddd;
 	-webkit-transition: background-color .25s linear;
 	transition: background-color .25s linear;
 }
@@ -244,7 +260,7 @@ p.btnContainer .btn {
 	padding: 5px 20px; 
 }
 
-#goto_step1a .btn{
+.btn.red {
 	background-color: #CA1616;
 	background-image: -moz-linear-gradient(top, #CA1616, #CA1616);
 	background-image: -ms-linear-gradient(top, #CA1616, #CA1616);
@@ -253,11 +269,10 @@ p.btnContainer .btn {
 	background-image: -o-linear-gradient(top, #CA1616, #CA1616);
 	background-image: linear-gradient(top, #CA1616, #CA1616);
 	background-repeat: repeat-x;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CA1616', endColorstr='#CA1616', GradientType=0
 }
 
 
-#goto_step1b .btn {
+.btn.blue {
 	background-color: #4B6DDB;
 	background-image: -moz-linear-gradient(top, #4B6DDB, #4B6DDB);
 	background-image: -ms-linear-gradient(top, #4B6DDB, #4B6DDB);
@@ -266,12 +281,19 @@ p.btnContainer .btn {
 	background-image: -o-linear-gradient(top, #4B6DDB, #4B6DDB);
 	background-image: linear-gradient(top, #4B6DDB, #4B6DDB);
 	background-repeat: repeat-x;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4B6DDB', endColorstr='#4B6DDB', GradientType=0
 }
 
-
-
 /* ---------- FOOTER ----------- */
-footer  p {
-	margin-bottom: 30px
+footer {
+	margin-bottom: 100px;
+	text-align:center;
+}
+
+footer .logos {
+	clear:both;
+	margin: 20px auto;
+}
+footer .logos img { 
+	height:55px; 
+	margin:20px 15px 0 0;
 }
