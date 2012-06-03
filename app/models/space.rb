@@ -3,6 +3,4 @@ class Space < ActiveRecord::Base
   
   has_many :matches, :dependent => :destroy
 
-  validates :name, :presence => true
-  validates :description, :presence => true
 end

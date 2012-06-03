@@ -2,13 +2,13 @@ require 'test_helper'
 
 class Admin::MatchesControllerTest < ActionController::TestCase
   setup do
-    @admin_match = admin_matches(:one)
+    @match = matches(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:admin_matches)
+    assert_not_nil assigns(:matches)
   end
 
   test "should get new" do
@@ -16,32 +16,32 @@ class Admin::MatchesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create admin_match" do
-    assert_difference('Admin::Match.count') do
-      post :create, admin_match: {  }
+  test "should create match" do
+    assert_difference('Match.count') do
+      post :create, match: {  }
     end
 
-    assert_redirected_to admin_match_path(assigns(:admin_match))
+    assert_redirected_to admin_match_path(assigns(:match))
   end
 
-  test "should show admin_match" do
-    get :show, id: @admin_match
+  test "should show match" do
+    get :show, id: @_match
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @admin_match
+    get :edit, id: @match
     assert_response :success
   end
 
-  test "should update admin_match" do
-    put :update, id: @admin_match, admin_match: {  }
-    assert_redirected_to admin_match_path(assigns(:admin_match))
+  test "should update match" do
+    put :update, id: @match, match: {  }
+    assert_redirected_to admin_match_path(assigns(:match))
   end
 
-  test "should destroy admin_match" do
-    assert_difference('Admin::Match.count', -1) do
-      delete :destroy, id: @admin_match
+  test "should destroy match" do
+    assert_difference('Match.count', -1) do
+      delete :destroy, id: @match
     end
 
     assert_redirected_to admin_matches_path

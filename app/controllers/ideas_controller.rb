@@ -34,9 +34,6 @@ class IdeasController < ApplicationController
       if @idea.save
         format.html { redirect_to root_url, notice: 'Idea was successfully created.' }
         format.json { render json: @idea, status: :created, location: @idea }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @idea.errors, status: :unprocessable_entity }
       end
     end
   end

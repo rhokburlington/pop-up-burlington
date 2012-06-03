@@ -29,21 +29,5 @@ class IdeasControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get edit" do
-    get :edit, id: @idea
-    assert_response :success
-  end
-
-  test "should update idea" do
-    put :update, id: @idea, idea: {  }
-    assert_redirected_to idea_path(assigns(:idea))
-  end
-
-  test "should destroy idea" do
-    assert_difference('Idea.count', -1) do
-      delete :destroy, id: @idea
-    end
-
-    assert_redirected_to ideas_path
   end
 end

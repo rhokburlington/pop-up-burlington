@@ -2,7 +2,7 @@ require 'test_helper'
 
 class SpacesControllerTest < ActionController::TestCase
   setup do
-    @space = spaces(:one)
+    @space = spaces(:agilion)
   end
 
   test "should get index" do
@@ -29,21 +29,4 @@ class SpacesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get edit" do
-    get :edit, id: @space
-    assert_response :success
-  end
-
-  test "should update space" do
-    put :update, id: @space, space: {  }
-    assert_redirected_to space_path(assigns(:space))
-  end
-
-  test "should destroy space" do
-    assert_difference('Space.count', -1) do
-      delete :destroy, id: @space
-    end
-
-    assert_redirected_to spaces_path
-  end
 end

@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(:version => 20120602192547) do
   end
 
   create_table "ideas", :force => true do |t|
-    t.boolean  "published"
-    t.boolean  "archived"
+    t.boolean  "published",        :default => false
+    t.boolean  "archived",         :default => false
     t.string   "name"
     t.string   "description"
     t.string   "contact"
@@ -40,26 +40,26 @@ ActiveRecord::Schema.define(:version => 20120602192547) do
     t.text     "logistics"
     t.text     "features"
     t.text     "formality"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
   end
 
   create_table "matches", :force => true do |t|
     t.datetime "start_datetime"
     t.datetime "end_datetime"
     t.string   "url"
-    t.boolean  "published"
-    t.boolean  "archived"
+    t.boolean  "published",      :default => false
+    t.boolean  "archived",       :default => false
     t.text     "comments"
     t.integer  "idea_id"
     t.integer  "space_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
   end
 
   create_table "spaces", :force => true do |t|
-    t.boolean  "published"
-    t.boolean  "archived"
+    t.boolean  "published",        :default => false
+    t.boolean  "archived",         :default => false
     t.string   "name"
     t.string   "description"
     t.string   "contact"
@@ -69,8 +69,12 @@ ActiveRecord::Schema.define(:version => 20120602192547) do
     t.text     "long_description"
     t.text     "satisfaction"
     t.text     "formality"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.string   "address"
+    t.string   "city",             :default => "Burlington"
+    t.string   "state",            :default => "VT"
+    t.string   "zip",              :default => "05401"
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
   end
 
 end

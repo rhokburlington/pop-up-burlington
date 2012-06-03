@@ -34,9 +34,6 @@ class SpacesController < ApplicationController
       if @space.save
         format.html { redirect_to root_url, notice: 'Space was successfully created.' }
         format.json { render json: @space, status: :created, location: @space }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @space.errors, status: :unprocessable_entity }
       end
     end
   end

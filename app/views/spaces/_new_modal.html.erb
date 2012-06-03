@@ -19,16 +19,79 @@
       </div>
     <% end %>
 
-    <div class="actions">
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+  <div class="actions">
 
-      <%= f.label :description %>
-      <%= f.text_field :description %>
+
+   
+
+
+      <div id="step1">
+        <h4>Step 1 of 4</h4>
+        <%= f.label "benefit" %>
+        <%= f.text_area :benefit %>
+
+        <%= f.label "goodwill" %>
+        <%= f.text_area :goodwill %>
+      </div>
+
+      <div id="step2" style="display:none">
+        <h4>Step 2 of 4</h4>
+        <%= f.label :long_description %>
+        <%= f.text_area :long_description %>
+
+        <%= f.label :satisfaction %>
+        <%= f.text_area :satisfaction %>
+      </div>
+
+      <div id="step3" style="display:none">
+        <h4>Step 3 of 4</h4>
+
+        <%= f.label :formality %>
+        <%= f.text_area :formality %>
+
+        <%= f.label :capacity %>
+        <%= f.text_field :capacity, :class => "span1" %> People
+      </div>
+
+      <div id="step4" style="display:none">
+        <h4>Step 4 of 4</h4>
+
+        <%= f.label "Title of Idea" %>
+        <%= f.text_field :name %>
+
+        <%= f.label "Short Description" %>
+        <%= f.text_field :description %>
+
+        <%= f.label "My Contact information" %>
+        <%= f.text_field :contact, :placeholder => "phone or email" %>
+
+        <%= f.label "Address" %>
+        <%= f.text_field :address, :placeholder => "street" %>
+
+        <%= f.label "City" %>
+        <%= f.text_field :city %>
+
+        <%= f.label "state" %>
+        <%= f.text_field :state %>
+
+        <%= f.label "Zip" %>
+        <%= f.text_field :zip %>
+   
+      </div>
+
     </div>
   </div>
   <div class="modal-footer">
-    <%= f.submit "Submit for approval", :class => "btn btn-primary" %>
+    <a id="back_step1" href="#" class="btn">Back</a>
+    <a id="back_step2" href="#" class="btn">Back</a>
+    <a id="back_step3" href="#" class="btn">Back</a>
+
+
+    <a id="goto_step2" href="#" class="btn btn-primary">Next</a>
+    <a id="goto_step3" href="#" class="btn btn-primary">Next</a>
+    <a id="goto_step4" href="#" class="btn btn-primary">Next</a>
+
+    <%= f.submit "Submit for approval", :class => "btn btn-primary", :style => "display:none", :id => "complete_steps" %>
     <a href="#" class="btn" data-dismiss="modal">Cancel</a>
   </div>
   <% end %>
