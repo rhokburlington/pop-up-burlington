@@ -1,5 +1,5 @@
 class Space < ActiveRecord::Base
-  attr_accessible :name, :description, :published, :contact, :capacity, :benefit, :goodwill, :long_description, :satisfaction, :formality, :archived, :address, :city, :state, :zip, :photo
+  attr_accessible :name, :description, :published, :contact, :capacity, :benefit, :goodwill, :long_description, :satisfaction, :formality, :archived, :address, :city, :state, :zip, :photo, :photo_file_name
   
   has_many :matches, :dependent => :destroy
 

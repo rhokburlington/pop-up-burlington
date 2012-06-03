@@ -1,5 +1,5 @@
 class Idea < ActiveRecord::Base
-  attr_accessible :name, :description, :success_criteria, :goodwill, :logistics, :features, :formality, :capacity, :contact, :published, :archived, :photo
+  attr_accessible :name, :description, :success_criteria, :goodwill, :logistics, :features, :formality, :capacity, :contact, :published, :archived, :photo, :photo_file_name
   
   has_many :matches, :dependent => :destroy
 
