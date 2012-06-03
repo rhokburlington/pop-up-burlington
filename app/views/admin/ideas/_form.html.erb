@@ -12,12 +12,45 @@
   <% end %>
 
   <div class="actions">
+
+    <%= f.label "Published" %>
+    <%= f.select :published, [:true, :false] %>
+
     <%= f.label :name %>
     <%= f.text_field :name %>
+
+
+    <%= f.label :contact %>
+    <%= f.text_field :contact %>
 
     <%= f.label :description %>
     <%= f.text_field :description %>
 
-    <%= f.submit %>
+    <%= f.label :capacity %>
+    <%= f.text_field :capacity, :class => "span1" %> People
+
+
+    <%= f.label "success_criteria" %>
+    <%= f.text_area :success_criteria %>
+
+    <%= f.label "goodwill" %>
+    <%= f.text_area :goodwill %>
+
+
+    <%= f.label :logistics %>
+    <%= f.text_area :logistics %>
+
+    <%= f.label :features %>
+    <%= f.text_area :features %>
+
+
+    <%= f.label :formality %>
+    <%= f.text_area :formality %>
+
+    <%= f.label "Archived" %>
+    <%= f.select :archived, [:true, :false] %>
+
+    <br/><br/>
+    <%= f.submit :class => "btn btn-primary" %>
   </div>
 <% end %>

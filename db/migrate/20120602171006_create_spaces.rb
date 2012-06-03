@@ -2,8 +2,8 @@ class CreateSpaces < ActiveRecord::Migration
   def change
     create_table :spaces do |t|
       
-      t.boolean :published
-      t.boolean :archived
+      t.boolean :published, :default => false
+      t.boolean :archived, :default => false
 
       t.string  :name
       t.string  :description

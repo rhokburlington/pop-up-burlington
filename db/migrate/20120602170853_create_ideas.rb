@@ -2,8 +2,8 @@ class CreateIdeas < ActiveRecord::Migration
   def change
     create_table :ideas do |t|
       
-      t.boolean :published
-      t.boolean :archived
+      t.boolean :published, :default => false
+      t.boolean :archived, :default => false
 
       t.string  :name
       t.string  :description

@@ -7,17 +7,23 @@
 
 <table class="table table-striped">
   <tr>
+    <th>Created on</th>
+    <th>Published?</th>
     <th>Name</th>
     <th>Description</th>
-    <th colspan="3" style="width:20%"></th>
+    <th>Contact Info</th>
+
+    <th colspan="2" style="width:15%"></th>
   </tr>
 
 <% @ideas.each do |idea| %>
   <tr>
+    <td><%= idea.created_at.to_s(:short) %></td>
+    <td><%= idea.published == true ? "yes" : "no" %></td>
     <td><%= idea.name %></td>
     <td><%= idea.description %></td>
-    <td><%= link_to 'Show', admin_idea_path(idea), :class => "btn" %></td>
-    <td><%= link_to 'Edit', edit_admin_idea_path(idea), :class => "btn btn-primary" %></td>
+    <td><%= idea.contact %></td>
+    <td><%= link_to 'Edit', edit_admin_idea_path(idea), :class => "btn" %></td>
     <td><%= link_to 'Destroy', admin_idea_path(idea), confirm: 'Are you sure?', method: :delete, :class => "btn btn-danger" %></td>
   </tr>
 <% end %>

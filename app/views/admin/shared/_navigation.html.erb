@@ -1,5 +1,7 @@
 <ul class="nav nav-pills">
-	<li><%= link_to "Matches", admin_matches_path %></li>
-	<li><%= link_to "Ideas", admin_ideas_path %></li>
-	<li><%= link_to "Spaces", admin_spaces_path %></li>
+	<li <%= controller.controller_name == "matches" ? "class='active'" : "" %>><%= link_to "Matches", admin_matches_path %></li>
+	<li <%= controller.controller_name == "ideas" ? "class='active'" : "" %>><%= link_to "Ideas", admin_ideas_path %></li>
+	<li <%= controller.controller_name == "spaces" ? "class='active'" : "" %>><%= link_to "Spaces", admin_spaces_path %></li>
 </ul>
+
+<p></p>

@@ -6,6 +6,7 @@
         <dt><%= idea.name %></dt>
         <dd style="float:left;width:40px;"><img src="http://placehold.it/50x50" alt=""></dd>
         <dd style="padding:5px;"><%= idea.description %></dd>
+        <dd style="font-size:10px"><%= link_to "more info", idea_path(idea) %></dd>
       <% end %>
     </dl>
     <%= render 'ideas/new_modal' %>

@@ -7,8 +7,8 @@ class CreateMatches < ActiveRecord::Migration
 
       t.string :url
 
-      t.boolean :published
-      t.boolean :archived
+      t.boolean :published, :default => false
+      t.boolean :archived, :default => false
 
       t.text :comments
 

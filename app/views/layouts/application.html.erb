@@ -29,7 +29,8 @@
 
 <div class="container">
 
-  <% unless controller.controller_path =~ /admin/ %>
+  <%# unless controller.controller_path =~ /admin/ %>
+  <% if controller.controller_path == "matches" %>
   <div class="hero-unit">
     <div class="row">
       <div class="span5">
@@ -37,8 +38,8 @@
       </div>
 
       <div class="span5">
-        <h1>Featured matches</h1>
-        <p>between this and thats</p>
+        <h1>Upcoming Community Events</h1>
+        <p>next</p>
       </div>
     </div>
   </div>

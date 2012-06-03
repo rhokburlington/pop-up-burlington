@@ -17,7 +17,7 @@
 
     <%= f.label "Idea" %>
     <%= f.select :idea_id, Idea.all.collect {|i| [ i.name, i.id ] } %>
-
-    <%= f.submit %>
+    <br/><br/>
+    <%= f.submit :class => "btn btn-primary" %>
   </div>
 <% end %>
