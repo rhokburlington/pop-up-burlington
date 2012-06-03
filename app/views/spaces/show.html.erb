@@ -1,5 +1,25 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'Back', root_path %>
 
-<%= link_to 'Edit', edit_space_path(@space) %> |
-<%= link_to 'Back', spaces_path %>
+<h3>Space Name</h3>
+<p><%= @space.name %></p>
+
+<h3>Space Description</h3>
+<p><%= @space.description %></p>
+
+
+<h3>sucess</h3>
+<p><%= @idea.success_criteria %></p>
+
+<h3>goodwill</h3>
+<p><%= @idea.goodwill %></p>
+
+<h3>logistics</h3>
+<p><%= @idea.logistics %></p>
+
+<h3>features</h3>
+<p><%= @idea.features %></p>
+
+<h3>formality</h3>
+<p><%= @idea.formality %></p>
