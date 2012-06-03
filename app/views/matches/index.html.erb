@@ -6,7 +6,7 @@
         <% @ideas.each do |idea| %>
         <dd class='image'><%= image_tag idea.photo.url(:thumb) %></dd>
         <dt><%= idea.name %></dt>
-        <dd class='desc' style="margin-bottom:8px"><%= idea.description %>
+        <dd class='desc' style="margin-bottom:10px"><%= idea.description %>
           <%= link_to "more info", idea_path(idea) %>
         </dd>
         <% end %>
@@ -20,8 +20,7 @@
   <div id='matchesCol' class="span4">
     <h2 class="purple" style="text-align:center">It's a match!</h2>
     <% @matches.each do |match| %>
-
-    <div class='match <%= match.start_datetime < Date.today ? "old" : "" %>' style="margin-bottom:8px">
+    <div class='match <%= match.start_datetime < Date.today ? "old" : "" %>'>
       <div class="calendar"> 
         <span class="month"><%= match.start_datetime.to_s(:month)%></span>
         <span class="day"><%= match.start_datetime.to_s(:day)%></span>
@@ -44,7 +43,7 @@
         <% @spaces.each do |space| %>
           <dd class='image'><%= image_tag space.photo.url(:thumb) %></dd>
           <dt><%= space.name %></dt>
-          <dd class='desc'><%= space.description %></dd>
+          <dd class='desc' style="margin-bottom:10px"><%= space.description %></dd>
         <% end %>
       </dl>
       <div class='downBtn'></div>
