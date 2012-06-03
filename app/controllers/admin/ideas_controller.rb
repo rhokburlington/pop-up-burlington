@@ -1,4 +1,5 @@
 class Admin::IdeasController < ApplicationController
+  http_basic_authenticate_with :name => "popup", :password => "vh1video"
 
   def index
     @ideas = Idea.all

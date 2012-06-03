@@ -1,4 +1,5 @@
 class Admin::MatchesController < ApplicationController
+  http_basic_authenticate_with :name => "popup", :password => "vh1video"
 
   def index
     @matches = Match.all

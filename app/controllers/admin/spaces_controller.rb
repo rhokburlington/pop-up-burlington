@@ -1,4 +1,6 @@
 class Admin::SpacesController < ApplicationController
+   http_basic_authenticate_with :name => "popup", :password => "vh1video"
+
   # GET /admin/spaces
   # GET /admin/spaces.json
   def index
