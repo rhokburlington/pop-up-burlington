@@ -1,3 +1,4 @@
-:btvwag
-	:name "btvwag"
-	:description "technology enthusiasts"
+btvwag:
+  id: 1
+  name: btvwag
+  description: technology enthusiasts

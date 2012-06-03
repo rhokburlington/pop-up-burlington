@@ -1,3 +1,4 @@
-:agilion
-	:name "Agilion Apps"
-	:description "Web App Consultancy"
+agilion:
+  id: 1
+  name: Agilion Apps
+  description: Web App Consultancy

@@ -21,12 +21,7 @@ class Admin::IdeasControllerTest < ActionController::TestCase
       post :create, idea: {  }
     end
 
-    assert_redirected_to admin_idea_path(assigns(:idea))
-  end
-
-  test "should show idea" do
-    get :show, id: @idea
-    assert_response :success
+    assert_redirected_to admin_ideas_path
   end
 
   test "should get edit" do
@@ -36,7 +31,7 @@ class Admin::IdeasControllerTest < ActionController::TestCase
 
   test "should update idea" do
     put :update, id: @idea, idea: {  }
-    assert_redirected_to admin_idea_path(assigns(:idea))
+    assert_redirected_to admin_ideas_path
   end
 
   test "should destroy idea" do

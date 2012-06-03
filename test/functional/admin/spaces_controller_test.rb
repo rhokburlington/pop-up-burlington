@@ -21,12 +21,7 @@ class Admin::SpacesControllerTest < ActionController::TestCase
       post :create, space: {  }
     end
 
-    assert_redirected_to admin_space_path(assigns(:space))
-  end
-
-  test "should show space" do
-    get :show, id: @space
-    assert_response :success
+    assert_redirected_to admin_spaces_path
   end
 
   test "should get edit" do
@@ -36,7 +31,7 @@ class Admin::SpacesControllerTest < ActionController::TestCase
 
   test "should update space" do
     put :update, id: @space, space: {  }
-    assert_redirected_to admin_space_path(assigns(:space))
+    assert_redirected_to admin_spaces_path
   end
 
   test "should destroy space" do

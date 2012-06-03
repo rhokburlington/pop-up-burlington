@@ -21,11 +21,11 @@ class Admin::MatchesControllerTest < ActionController::TestCase
       post :create, match: {  }
     end
 
-    assert_redirected_to admin_match_path(assigns(:match))
+    assert_redirected_to admin_matches_path
   end
 
   test "should show match" do
-    get :show, id: @_match
+    get :show, id: @match
     assert_response :success
   end
 
@@ -36,7 +36,7 @@ class Admin::MatchesControllerTest < ActionController::TestCase
 
   test "should update match" do
     put :update, id: @match, match: {  }
-    assert_redirected_to admin_match_path(assigns(:match))
+    assert_redirected_to admin_matches_path
   end
 
   test "should destroy match" do

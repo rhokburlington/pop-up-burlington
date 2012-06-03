@@ -1,3 +1,4 @@
-:one
-	:space agilion
-	:idea  btvwag
+one:
+  id: 1
+  space_id: 1
+  idea_id:  1

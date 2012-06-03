@@ -2,7 +2,7 @@ require 'test_helper'
 
 class IdeasControllerTest < ActionController::TestCase
   setup do
-    @idea = ideas(:one)
+    @idea = ideas(:btvwag)
   end
 
   test "should get index" do
@@ -11,17 +11,12 @@ class IdeasControllerTest < ActionController::TestCase
     assert_not_nil assigns(:ideas)
   end
 
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
-
   test "should create idea" do
     assert_difference('Idea.count') do
       post :create, idea: {  }
     end
 
-    assert_redirected_to idea_path(assigns(:idea))
+    assert_redirected_to root_url
   end
 
   test "should show idea" do
@@ -29,5 +24,4 @@ class IdeasControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  end
 end
