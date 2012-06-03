@@ -1,0 +1,276 @@
+/*
+	red: #4B6DDB
+	blue: #CA1616
+	purple: #9200BF
+*/
+
+
+a, abbr, acronym, address, applet, article, aside, audio,
+b, blockquote, big, body,
+center, canvas, caption, cite, code, command,
+datalist, dd, del, details, dfn, dl, div, dt, 
+em, embed,
+fieldset, figcaption, figure, font, footer, form, 
+h1, h2, h3, h4, h5, h6, header, hgroup, html,
+i, iframe, img, ins,
+kbd, 
+keygen,
+label, legend, li, 
+meter,
+nav,
+object, ol, output,
+p, pre, progress,
+q, 
+s, samp, section, small, span, source, strike, strong, sub, sup,
+table, tbody, tfoot, thead, th, tr, tdvideo, tt,
+u, ul, 
+var {
+    background:transparent;
+    border:0 none;
+    font-size:100%;
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    vertical-align:top;
+}
+
+ol, 
+ul {
+	list-style:none;
+}
+blockquote, 
+q {
+	quotes:none;
+}
+table, 
+table td { 
+	padding:0;
+	border:none;
+	border-collapse:collapse;
+}
+
+
+/* ---------- TOP LEVEL STUFF ----------- */
+
+body { 
+	background: url('/assets/background.png');
+}
+.container { 
+	width: 1070px;
+}
+h1, h2, h3, h4, h5, h6 { 
+	font-family: 'Vollkorn', serif; 
+}
+h1, .hero-unit h1 { 
+	font-size: 1.3em; 
+	color: #eee;
+}
+h2 {
+	font-size: 1.5em; 
+	margin-bottom: 10px;
+}
+.red { color: #4B6DDB; }
+.blue { color: #CA1616; }
+.purple { color: #9200BF; }
+
+
+/* ---------- TOP NAV: black bar ----------- */
+.navbar  { 
+	height:40px; 
+	background-color: #622475;
+} 
+.navbar .logo{ 
+	float:left;
+	margin-right:20px; 
+	opacity: .8;
+	display:none;
+}
+.navbar .brand,
+.navbar .nav > li > a { 
+	margin: 5px 0px 0px 50px; 
+	padding: 0px;
+	color: #bbbbbb;
+	text-shadow: 0 0 5px rgba(255,255,255, .3);
+}
+.navbar .brand { margin-top: 0px; }
+.navbar .nav > li > a { 
+	margin-top: 10px; 
+}
+
+/* ---------- HEADER: hero unit ----------- */
+.hero-unit { 
+	height: 220px; 
+	background:transparent;
+	border: 1px dashed #ccc;
+	padding-top: 60px;
+	box-shadow: 5px 5px 5px #DDDDDD;
+	background-color: white;
+	background-color: rgba(255,255,255,.2);
+}
+#myCarousel {
+	width: 545px;
+	float: right;
+}
+	
+/* ---------- PILLARS CONTAINER ----------- */
+#pillars {
+	padding: 15px 0;	
+	position: relative; 
+}
+#pillars h2 { 
+}
+#pillars .image { 
+	float:left;
+	width:40px; 
+	padding: 0 5px 0 0;
+}
+#ideasCol, 
+#matchesCol,
+#spacesCol {
+	position: relative;
+	border: 1px dashed #ccc;
+	border-bottom-width: 0;
+	height: 250px;
+	padding: 10px; 
+	box-shadow: 5px 5px 5px #DDDDDD;
+	background-color: white;
+	background-color: rgba(255,255,255,.2);
+}
+
+
+/* ---------- COLUMN STUFF ----------- */
+#ideasCol .desc, 
+#spacesCol .desc { 
+	clear: both;
+	padding:5px 0; 
+}
+#matchesCol { 
+	width: 445px;
+	border: solid 2px #9200BF;
+	border-bottom-width: 0px;
+}
+#matchesCol .image { 
+	width:auto; 
+}
+.match {		
+	clear: left;
+	margin-bottom: 25px;
+}
+.calendar { 
+	float: left;
+	margin: 0px 10px 10px 0;
+	font-family: 'PT Sans Narrow', sans-serif;
+	width: 54px; 
+	height: 60px; 
+	font-size: 0.8em; 
+	background: #eee; 
+	border: 1px solid #999; 
+	background: -webkit-gradient(linear, left top, left bottom, from(#405b72), to(#e6e6e6), color-stop(.08,#f9f9f9));
+	background: -moz-linear-gradient(top, #f9f9f9, #e6e6e6); 
+	-webkit-border-top-left-radius:  5px; -moz-border-radius-top-left:      5px;
+	-webkit-border-bottom-left-radius:  5px; -moz-border-radius-bottom-left:      5px;
+	-webkit-border-bottom-right-radius: 5px; -moz-border-radius-bottom-right:     5px;
+}
+.calendar > span { display: block; }
+.calendar > .month { 
+	text-align: right; 
+	padding: 2px 5px 2px 0;
+	text-shadow: 0 1px #666;
+	background: -webkit-gradient(linear, left top, left bottom, from(#79D4FF), to(#2256FD));
+	background: -moz-linear-gradient(top, #79D4FF, #2256FD);
+}                                         
+.calendar > .day { 
+	line-height: 38px;
+	text-align: center; 
+	font-weight: bold; 
+	font-size: 2.3em;
+	text-shadow: 0 1px #fff;        
+}	
+.old.match .day {
+	color: #555;
+}
+.old.match .month { 
+	background: -webkit-gradient(linear, left top, left bottom, from(#dddddd), to(#999999));
+	background: -moz-linear-gradient(top, #dddddd, #999999);
+}
+#ideas-arrow { 
+	position: absolute;
+	top: 30px;
+	left: 50px;
+	opacity: .1;
+	z-index:-55;
+}
+		
+/* ---------- BUTTONS  ----------- */
+p.btnContainer{ 
+	padding: 10px 0 0 0;
+}
+p.btnContainer .btn { 
+	height: auto;
+	color:black;
+	text-shadow: 0 0 3px rgba(200,200,200, .8);
+	border: 1px solid #555;
+}
+.downBtn {
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	width: 100%;
+	height: 20px;
+	border: solid 1px #bbb;
+	border-left-width: 0;
+	border-right-width: 0;
+	background: url('/assets/icon_arrow_gray_down.png') 50% 50% no-repeat #ddd;
+	-webkit-transition: background-color .25s linear;
+	transition: background-color .25s linear;
+}
+.downBtn:hover {
+	border: solid 1px #999;
+}
+#ideasCol .downBtn:hover {
+	background-color: #CA1616;		/* red: #4B6DDB */
+}
+#matchesCol .downBtn:hover {
+	background-color: #9200BF;		/* purple: #9200BF */
+}
+#spacesCol .downBtn:hover {
+	background-color: #4B6DDB;		/* blue: #CA1616 */	
+}
+
+.btn {
+	border-radius: 0;
+	padding: 5px 20px; 
+}
+
+.btn.blue {
+	background-color: #CA1616;
+	background-image: -moz-linear-gradient(top, #CA1616, #CA1616);
+	background-image: -ms-linear-gradient(top, #CA1616, #CA1616);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#CA1616), to(#CA1616));
+	background-image: -webkit-linear-gradient(top, #CA1616, #CA1616);
+	background-image: -o-linear-gradient(top, #CA1616, #CA1616);
+	background-image: linear-gradient(top, #CA1616, #CA1616);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CA1616', endColorstr='#CA1616', GradientType=0
+}
+
+
+.btn.red {
+	background-color: #4B6DDB;
+	background-image: -moz-linear-gradient(top, #4B6DDB, #4B6DDB);
+	background-image: -ms-linear-gradient(top, #4B6DDB, #4B6DDB);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#4B6DDB), to(#4B6DDB));
+	background-image: -webkit-linear-gradient(top, #4B6DDB, #4B6DDB);
+	background-image: -o-linear-gradient(top, #4B6DDB, #4B6DDB);
+	background-image: linear-gradient(top, #4B6DDB, #4B6DDB);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4B6DDB', endColorstr='#4B6DDB', GradientType=0
+}
+
+
+
+/* ---------- FOOTER ----------- */
+footer  p {
+	margin-bottom: 30px
+}

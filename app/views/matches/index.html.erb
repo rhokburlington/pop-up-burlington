@@ -1,41 +1,57 @@
-<div class="row">
+<div id="pillars" class="row">
   <div class="span3">
-    <h2>Ideas</h2>
-    <dl>
-      <% @ideas.each do |idea| %>
+    <div id='ideasCol'>
+      <h2 class="blue">Ideas</h2>
+      <dl>
+        <% @ideas.each do |idea| %>
+        <dd class='image'><%= image_tag idea.photo.url(:thumb) %></dd>
         <dt><%= idea.name %></dt>
-        <dd><%= image_tag idea.photo.url(:thumb) %></dd>
-        <dd style="padding:5px;"><%= idea.description %></dd>
-        <dd style="font-size:10px"><%= link_to "more info", idea_path(idea) %></dd>
-      <% end %>
-    </dl>
+        <dd class='desc'><%= idea.description %>
+          <%= link_to "more info", idea_path(idea) %>
+        </dd>
+        <% end %>
+      </dl>
+
+      <div class='downBtn'></div>
+    </div>
     <%= render 'ideas/new_modal' %>
- 
   </div>
   
-  <div class="span6">
-    <h2>It's a match</h2>
-    <dl>
-      <% @matches.each do |match| %>
-      <dd style="float:left;"><img src="http://placehold.it/100x100" alt=""></dd>
-      <dd style="padding:5px;">EVENT NAME</dd>
-      <dd style="padding:5px;"><%= match.idea.name %> &amp; <%= match.space.name %></dd>
-      <dd>November 21st, 2011</dd>
-      <% end %>
-    </dl>
+  <div id='matchesCol' class="span4">
+    <h2 class="purple">It's a match</h2>
+    <% @matches.each do |match| %>
+
+    <div class='match <%= match.start_datetime < Date.today ? "old" : "" %>'>
+      <div class="calendar"> 
+        <span class="month"><%= match.start_datetime.to_s(:month)%></span>
+        <span class="day"><%= match.start_datetime.to_s(:day)%></span>
+      </div>
+      <dl>
+        <dd class='eventName'><%= match.idea.name %></dd>
+        <dd class='whereWhen'><%= match.idea.name %> &amp; <%= match.space.name %></dd>
+        <dd><%= match.start_datetime.to_s(:long)%></dd>
+      </dl>
+    </div>
+    <% end %>
+
+    <div class='downBtn'></div>
   </div>
 
   <div class="span3">
-    <h2>Spaces</h2>
-    <dl>
-      <% @spaces.each do |space| %>
-        <dt><%= space.name %></dt>
-        <dd style="float:left;width:40px;"><%= image_tag space.photo.url(:thumb) %></dd>
-        <dd style="padding:5px;"><%= space.description %></dd>
-      <% end %>
-    </dl>
-    <%= render 'spaces/new_modal' %>
+    <div id="spacesCol">
+      <h2 class="red">Spaces</h2>
+      <dl>
+        <% @spaces.each do |space| %>
+          <dd class='image'><%= image_tag space.photo.url(:thumb) %></dd>
+          <dt><%= space.name %></dt>
+          <dd class='desc'><%= space.description %></dd>
+        <% end %>
+      </dl>
+      <div class='downBtn'></div>
+    </div>
+  <%= render 'spaces/new_modal' %>
   </div>
+
 </div>
 
 
