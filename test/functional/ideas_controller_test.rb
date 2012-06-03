@@ -5,12 +5,6 @@ class IdeasControllerTest < ActionController::TestCase
     @idea = ideas(:btvwag)
   end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:ideas)
-  end
-
   test "should create idea" do
     assert_difference('Idea.count') do
       post :create, idea: {  }

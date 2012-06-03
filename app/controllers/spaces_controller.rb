@@ -1,14 +1,5 @@
 class SpacesController < ApplicationController
 
-  def index
-    @spaces = Space.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @spaces }
-    end
-  end
-
   def show
     @space = Space.find(params[:id])
 
