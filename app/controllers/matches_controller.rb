@@ -1,9 +1,9 @@
 class MatchesController < ApplicationController
 
   def index
-    @matches = Match.all
-    @ideas = Idea.all
-    @spaces = Space.all
+    @matches = Match.where(:published => true)
+    @ideas = Idea.where(:published => true)
+    @spaces = Space.where(:published => true)
     @idea = Idea.new
     @space = Space.new
 

@@ -55,13 +55,12 @@ table td {
 
 body { 
 	background: url('/assets/background.png');
+	padding-top: 60px;
 }
 .container { 
 	width: 1070px;
 }
-h1, h2, h3, h4, h5, h6 { 
-	font-family: 'Vollkorn', serif; 
-}
+
 h1, .hero-unit h1 { 
 	font-size: 1.3em; 
 	color: #eee;
@@ -245,7 +244,7 @@ p.btnContainer .btn {
 	padding: 5px 20px; 
 }
 
-.btn.blue {
+#goto_step1a .btn{
 	background-color: #CA1616;
 	background-image: -moz-linear-gradient(top, #CA1616, #CA1616);
 	background-image: -ms-linear-gradient(top, #CA1616, #CA1616);
@@ -258,7 +257,7 @@ p.btnContainer .btn {
 }
 
 
-.btn.red {
+#goto_step1b .btn {
 	background-color: #4B6DDB;
 	background-image: -moz-linear-gradient(top, #4B6DDB, #4B6DDB);
 	background-image: -ms-linear-gradient(top, #4B6DDB, #4B6DDB);
