@@ -17,6 +17,27 @@
 
     <%= f.label "Idea" %>
     <%= f.select :idea_id, Idea.all.collect {|i| [ i.name, i.id ] } %>
+
+    <%= f.label "Published?" %>
+    <%= f.select :published, [:true, :false] %>
+    
+    <%= f.label "Archived?" %>
+    <%= f.select :archived, [:true, :false] %>
+
+    <%= f.label "Start" %>
+    <%= f.datetime_select :start_datetime %>
+
+    <%= f.label "End" %>
+    <%= f.datetime_select :end_datetime %>
+
+    <%= f.label "Event URL" %>
+    <%= f.text_field :url, :placeholder => "eventbrite link or other" %>
+
+
+    <%= f.label "Comments" %>
+    <%= f.text_area :comments, :placeholder => "any success notes?" %>
+
+
     <br/><br/>
     <%= f.submit :class => "btn btn-primary" %>
   </div>

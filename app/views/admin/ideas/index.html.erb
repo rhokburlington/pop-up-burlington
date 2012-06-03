@@ -18,7 +18,7 @@
 
 <% @ideas.each do |idea| %>
   <tr>
-    <td><%= idea.created_at.to_s(:short) %></td>
+    <td><%= idea.created_at.to_s(:long) %></td>
     <td><%= idea.published == true ? "yes" : "no" %></td>
     <td><%= idea.name %></td>
     <td><%= idea.description %></td>

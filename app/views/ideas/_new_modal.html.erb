@@ -29,7 +29,7 @@
         <%= f.text_area :goodwill %>
       </div>
 
-      <div id="step2" style="display:none">
+      <div id="step2">
         <h4>Step 2 of 4</h4>
         <%= f.label :logistics %>
         <%= f.text_area :logistics %>
@@ -38,7 +38,7 @@
         <%= f.text_area :features %>
       </div>
 
-      <div id="step3" style="display:none">
+      <div id="step3">
         <h4>Step 3 of 4</h4>
 
         <%= f.label :formality %>
@@ -48,10 +48,9 @@
         <%= f.text_field :capacity, :class => "span1" %> People
       </div>
 
-      <div id="step4" style="display:none">
+      <div id="step4">
         <h4>Step 4 of 4</h4>
-
-
+        
         <%= f.label "Title of Idea" %>
         <%= f.text_field :name %>
 
@@ -61,7 +60,6 @@
         <%= f.label "My Contact information" %>
         <%= f.text_field :contact, :placeholder => "phone or email" %>
       </div>
-
     </div>
   </div>
   <div class="modal-footer">
@@ -74,7 +72,8 @@
     <a id="goto_step3" href="#" class="btn btn-primary">Next</a>
     <a id="goto_step4" href="#" class="btn btn-primary">Next</a>
 
-    <%= f.submit "Submit for approval", :class => "btn btn-primary", :style => "display:none", :id => "complete_steps" %>
+    <%= f.submit "Submit for approval", :class => "btn btn-primary", :id => "complete_steps" %>
+    <br/><br/>
     <a href="#" class="btn" data-dismiss="modal">Cancel</a>
   </div>
   <% end %>

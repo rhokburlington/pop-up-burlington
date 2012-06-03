@@ -13,5 +13,4 @@ $ ->
 
   $('#goto_step4').click ->
   	$('#step1,#step2,#step3,#goto_step2,#goto_step3,#goto_step4,#back_step1,#back_step2').hide()
-  	$('#step4,#complete_steps,#back_step3').show()  	
- 
+  	$('#step4,#complete_steps,#back_step3').show()

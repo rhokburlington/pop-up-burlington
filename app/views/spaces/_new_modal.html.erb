@@ -1,4 +1,4 @@
-<p><a class="btn" href="#spaceModal" data-toggle="modal">I have a space</a></p>
+<p><a id="goto_step1" class="btn" href="#spaceModal" data-toggle="modal">I have a space</a></p>
 
 <div class="modal fade" id="spaceModal"> 
   <div class="modal-header">
@@ -19,12 +19,7 @@
       </div>
     <% end %>
 
-  <div class="actions">
-
-
-   
-
-
+    <div class="actions">
       <div id="step1">
         <h4>Step 1 of 4</h4>
         <%= f.label "benefit" %>
@@ -34,7 +29,7 @@
         <%= f.text_area :goodwill %>
       </div>
 
-      <div id="step2" style="display:none">
+      <div id="step2">
         <h4>Step 2 of 4</h4>
         <%= f.label :long_description %>
         <%= f.text_area :long_description %>
@@ -43,7 +38,7 @@
         <%= f.text_area :satisfaction %>
       </div>
 
-      <div id="step3" style="display:none">
+      <div id="step3">
         <h4>Step 3 of 4</h4>
 
         <%= f.label :formality %>
@@ -51,9 +46,10 @@
 
         <%= f.label :capacity %>
         <%= f.text_field :capacity, :class => "span1" %> People
+        
       </div>
 
-      <div id="step4" style="display:none">
+      <div id="step4">
         <h4>Step 4 of 4</h4>
 
         <%= f.label "Title of Idea" %>
@@ -76,9 +72,7 @@
 
         <%= f.label "Zip" %>
         <%= f.text_field :zip %>
-   
       </div>
-
     </div>
   </div>
   <div class="modal-footer">
@@ -91,7 +85,8 @@
     <a id="goto_step3" href="#" class="btn btn-primary">Next</a>
     <a id="goto_step4" href="#" class="btn btn-primary">Next</a>
 
-    <%= f.submit "Submit for approval", :class => "btn btn-primary", :style => "display:none", :id => "complete_steps" %>
+    <%= f.submit "Submit for approval", :class => "btn btn-primary", :id => "complete_steps" %>
+    <br/><br/>
     <a href="#" class="btn" data-dismiss="modal">Cancel</a>
   </div>
   <% end %>

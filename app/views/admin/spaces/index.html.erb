@@ -16,7 +16,7 @@
 
 <% @spaces.each do |space| %>
   <tr>
-    <td><%= space.created_at.to_s(:short) %></td>
+    <td><%= space.created_at.to_s(:long) %></td>
     <td><%= space.published == true ? "yes" : "no" %></td>
     <td><%= space.name %></td>
     <td><%= space.description %></td>

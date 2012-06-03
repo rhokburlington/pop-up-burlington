@@ -2,22 +2,30 @@
 
 <h3>Matches</h3>
 
+<p>Unpublished Ideas: <b><%= Idea.where(:published => false).count %></b></p>
 
 <%= link_to 'New Match', new_admin_match_path, :class => "btn btn-success pull-right", :style=>"margin:10px" %>
 
 <table class="table table-striped">
   <tr>
+    <th>Created At</th>
+    <th>Published?</th>
+    <th>Event Timeframe</th>
     <th>Idea</th>
     <th>Space</th>
-    <th colspan="3" style="width:20%"></th>
+    <th>URL</th>
+    <th colspan="2" style="width:15%"></th>
   </tr>
 
 <% @matches.each do |match| %>
   <tr>
+    <td><%= match.created_at.to_s(:long) %></td>
+    <td><%= match.published == true ? "yes" : "no" %></td>
+    <td><%= match.start_datetime.to_s(:long) %> to<br/><%= match.end_datetime.to_s(:long) %></td>
     <td><%= match.idea.name %></td>
     <td><%= match.space.name %></td>
-    <td><%= link_to 'Show', admin_match_path(match), :class => "btn" %></td>
-    <td><%= link_to 'Edit', edit_admin_match_path(match), :class => "btn btn-primary" %></td>
+    <td><%= match.url %></td>
+    <td><%= link_to 'Edit', edit_admin_match_path(match), :class => "btn" %></td>
     <td><%= link_to 'Destroy', admin_match_path(match), confirm: 'Are you sure?', method: :delete, :class => "btn btn-danger" %></td>
   </tr>
 <% end %>
